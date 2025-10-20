@@ -145,20 +145,57 @@ section {
   transition: padding 0.3s ease, background 0.3s ease;
 }
 
-/* Logo */
-.header .logo {
-  font-family: var(--font-primary);
-  font-weight: 800;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  color: var(--accent-color);
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Playfair Display', serif; /* Elegant Display Serif font */
+  cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.header .logo:hover {
-  color: #ffe066;
-  transform: scale(1.1) rotate(-1deg);
+.logo img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Text inside logo */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text .brand {
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--accent-color);
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.logo-text .tagline {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #d9d9d9;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+/* Hover effects */
+.logo:hover {
+  transform: scale(1.08);
+}
+
+.logo:hover img {
+  transform: rotate(4deg) scale(1.05);
+}
+
+.logo:hover .brand {
+  color: #ffe066; /* golden hover accent */
 }
 
 /* Nav Links */
@@ -595,9 +632,10 @@ section {
   }
 }
 
-/* ==========================
-   COMPACT VERTICAL FORM WITH SIDE-BY-SIDE FIELDS
-========================== */
+/* ================================
+   BOOKING FORM - ROYALWEB PREMIUM
+=================================*/
+
 #bookingForm {
   max-width: 36rem;
   width: 90%;
@@ -612,19 +650,22 @@ section {
   border-radius: 0.85rem;
   padding: 1.5rem 1.5rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
-/* Group fields horizontally */
+/* ================================
+   RESPONSIVE FIELD ARRANGEMENT
+=================================*/
 .form-row {
   display: flex;
   gap: 1rem;
 }
 
 .form-row .form-group {
-  flex: 1; /* Each field takes half the row */
+  flex: 1;
 }
 
-/* Maintain vertical stacking on mobile */
+/* Stack fields on smaller screens */
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
@@ -632,7 +673,9 @@ section {
   }
 }
 
-/* Standard Form Group Styling */
+/* ================================
+   FORM ELEMENTS
+=================================*/
 #bookingForm .form-group {
   display: flex;
   flex-direction: column;
@@ -645,20 +688,62 @@ section {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Input, Textarea, Select Base */
 #bookingForm input,
 #bookingForm textarea,
 #bookingForm select {
+  width: 100%;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  color: var(--text-color);
+  color: var(--text-color, #fff);
   padding: 0.65rem 1rem;
   border-radius: 0.65rem;
   font-size: 0.95rem;
-  font-family: var(--font-secondary);
+  font-family: var(--font-secondary, 'Poppins', sans-serif);
   transition: all 0.25s ease;
   backdrop-filter: blur(4px);
+  box-sizing: border-box;
 }
 
+/* Input focus glow */
+#bookingForm input:focus,
+#bookingForm textarea:focus,
+#bookingForm select:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 6px #ffd700;
+}
+
+/* ================================
+   SELECT DROPDOWN STYLING
+=================================*/
+#bookingForm select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  background-image: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  cursor: pointer;
+}
+
+/* Dark dropdown menu */
+#bookingForm select option {
+  background: #0b0b2a;       /* Deep dark background */
+  color: #fff;               /* White text */
+}
+
+/* Hover effect on options */
+#bookingForm select option:hover {
+  background: #1a1a3d;
+  color: #ffd700;
+}
+
+/* ================================
+   SUBMIT BUTTON
+=================================*/
 #bookingForm .btn {
   width: 100%;
   padding: 0.75rem;
@@ -672,12 +757,40 @@ section {
   transition: all 0.25s ease;
 }
 
+#bookingForm .btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffe066, #ffd700);
+}
+
+/* ================================
+   SMALL DEVICE OPTIMIZATION
+=================================*/
+@media (max-width: 480px) {
+  #bookingForm {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  #bookingForm label {
+    font-size: 0.85rem;
+  }
+
+  #bookingForm input,
+  #bookingForm textarea,
+  #bookingForm select {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  #bookingForm .btn {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
+
 
 /* ==========================
    CARDS / TESTIMONIALS - GLASSY STYLE
-========================== */
-/* ==========================
-   CARDS / TESTIMONIALS - CLEAN & RESPONSIVE
 ========================== */
 .cards-container, .testimonials .cards {
   display: flex;
@@ -725,93 +838,164 @@ section {
 }
 
 /* ==========================
-   CARD CONTENT
+   💎 UPGRADED CARD DESIGN
 ========================== */
-.card img, .project-link img {
+
+/* CARD CONTAINER */
+.card,
+.project-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(145deg, #1a1a3d, #0b0b2a);
+  border-radius: 1.25rem;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.project-link:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(255, 215, 0, 0.25);
+}
+
+/* CARD IMAGE */
+.card img,
+.project-link img {
   width: 100%;
   height: auto;
-  max-height: 60%;          /* Bigger screenshot visibility */
+  max-height: 65%;
   object-fit: cover;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card p.Clik-me, .project-link p.Clik-me {
-  font-size: 0.9rem;
-  color: #ffffff;
-  margin: 0;
-  font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease;
+.card:hover img,
+.project-link:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
 }
 
-.card:hover p.Clik-me, .project-link:hover p.Clik-me {
-  transform: translateY(-2px);
-  color: #ffe066;
+/* CLICK ME BUTTON */
+.card p.Clik-me,
+.project-link p.Clik-me {
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(90deg, #ffd700, #ffb700);
+  color: #0b0b2a;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 999px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+  width: fit-content;
+}
+
+.card p.Clik-me:hover,
+.project-link p.Clik-me:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(90deg, #ffea80, #ffd700);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
+  color: #000;
 }
 
 /* ==========================
-   TESTIMONIAL CARD SPECIFIC
+   TESTIMONIAL CARD (UNCHANGED)
 ========================== */
 .testimonial-card {
-  width: 18rem;
-  aspect-ratio: 4/5.5;       /* Slightly taller for reviews */
-  padding: 1rem 1rem 1.5rem;
-  gap: 0.75rem;
+  width: 20rem;
+  aspect-ratio: 4 / 5.3;
+  padding: 1.5rem 1rem 2rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(145deg, #1a1a3d, #0b0b2a);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(255, 215, 0, 0.25);
+}
+
+/* CONTENT */
 .testimonial-content p {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #fdf6e3;
-  line-height: 1.4;
-  margin: 0.5rem 0 0.75rem 0;
+  line-height: 1.6;
+  margin: 0.5rem 0 1rem 0;
+  font-style: italic;
+  text-align: left;
 }
 
+/* PROFILE SECTION */
 .testimonial-profile {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
+  margin-top: auto;
 }
 
 .testimonial-profile img {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
 }
 
 .testimonial-profile .profile-info h4 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
+  color: #fff;
 }
 
 .testimonial-profile .profile-info span {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ==========================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE FIXES
 ========================== */
-@media (max-width: 1024px) {
-  .card { width: 14rem; }
-  .testimonial-card { width: 16rem; }
-}
-
 @media (max-width: 768px) {
-  .card { width: 12rem; }
-  .testimonial-card { width: 14rem; }
-  .testimonial-profile img { width: 32px; height: 32px; }
-  .testimonial-content p, .project-link p.Clik-me { font-size: 0.8rem; }
+  .card {
+    width: 13rem;
+  }
+  .testimonial-card {
+    width: 16rem;
+  }
+  .card p.Clik-me,
+  .project-link p.Clik-me {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .card { width: 10rem; }
-  .testimonial-card { width: 12rem; }
-  .project-link img { max-height: 50%; }
-  .testimonial-profile img { width: 28px; height: 28px; }
-  .testimonial-content p, .project-link p.Clik-me { font-size: 0.75rem; }
+  .card {
+    width: 11rem;
+  }
+  .testimonial-card {
+    width: 13rem;
+  }
+  .card p.Clik-me,
+  .project-link p.Clik-me {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.9rem;
+  }
 }
+
 
 
 
@@ -1182,6 +1366,49 @@ html, body {
 * {
   box-sizing: border-box;
   max-width: 100vw;   /* Prevent elements from exceeding screen width */
+}
+/* Toast Alerts */
+.toast {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: linear-gradient(135deg, #ffd700, #fff7cc);
+  color: #0b0b2a;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 2000;
+}
+.toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.toast.success {
+  background: linear-gradient(135deg, #00d084, #a6f0c6);
+}
+
+/* Highlight Glow */
+.highlight-glow {
+  animation: glowFade 1s ease;
+}
+@keyframes glowFade {
+  from { box-shadow: 0 0 15px gold; }
+  to { box-shadow: none; }
+}
+
+/* Reveal Elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
