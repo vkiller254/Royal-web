@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Web - Build Your Dream Website</title>
+    <link rel="stylesheet" href="style.css">
+   <script src="https://kit.fontawesome.com/1f1f55f1e6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- HEADER / NAVBAR -->
+   <header class="header">
+  <div class="logo">RoyalWeb</div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Build Your Dream Website with Royal Web</h1>
+            <p>Book a professional web design and grow your business online.</p>
+            <a href="#booking" class="btn">Book Now</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <h2>About Royal Web</h2>
+        <p>We help businesses grow online with modern, mobile-optimized, and SEO-ready websites.</p>
+       <div class="cards">
+    <div class="cards-inner">
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>Modern Design</h3>
+        </div>
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>Fast Delivery</h3>
+        </div>
+        <div class="card">
+            <div class="icon">📱</div>
+            <h3>Mobile Optimized</h3>
+        </div>
+        <div class="card">
+            <div class="icon">🔍</div>
+            <h3>SEO Ready</h3>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+    <!-- BOOKING FORM SECTION -->
+    <section class="booking" id="booking">
+        <h2>Book Your Website</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+123 456 7890" required>
+            </div>
+            <div class="form-group">
+                <label for="business">Business Name</label>
+                <input type="text" id="business" name="business" placeholder="Your business name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Business Description</label>
+                <textarea id="description" name="description" placeholder="Describe your business..." rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Business Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select category</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Personal Brand">Personal Brand</option>
+                    <option value="Portfolio">Portfolio</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="NGO">NGO</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="deadline">Preferred Deadline</label>
+                <input type="date" id="deadline" name="deadline" required>
+            </div>
+            <button type="submit" class="btn">Request a Website</button>
+        </form>
+    </section>
+
+   <section class="testimonials" id="testimonials">
+  <h2>Our Work & Reviews</h2>
+  <div class="cards">
+    
+    <!-- Card 1: Sister's CV -->
+    <div class="testimonial-card">
+      <a href="https://joyful-concha-97d43f.netlify.app/" target="_blank" class="project-link">
+        <img src="IMG/p2.png" alt="Project Screenshot">
+        <p class="Clik-me">Click Me</p>
+      </a>
+      <div class="testimonial-content">
+        <p>"My sister’s CV looks amazing! The design is professional and easy to read."</p>
+      </div>
+      <div class="testimonial-profile">
+        <img src="IMG/sister.jpg" alt="Profile" />
+        <div class="profile-info">
+          <h4>Jane Doe</h4>
+          <span>Job Seeker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: StickerVerse -->
+    <div class="testimonial-card">
+      <a href="https://tranquil-licorice-d98377.netlify.app/" target="_blank" class="project-link">
+        <img src="IMG/p3.png" alt="Project Screenshot">
+        <p class="Clik-me">Click Me</p>
+      </a>
+      <div class="testimonial-content">
+        <p>"StickerVerse now has an incredible website! Clients love it and sales increased."</p>
+      </div>
+      <div class="testimonial-profile">
+        <img src="IMG/stiker.webp" alt="Profile" />
+        <div class="profile-info">
+          <h4>Mark Johnson</h4>
+          <span>StickerVerse</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Hollywave Kids Centre -->
+    <div class="testimonial-card">
+      <a href="https://vkiller254.github.io/hollywave-site/" target="_blank" class="project-link">
+        <img src="IMG/P1.png" alt="Project Screenshot">
+        <p class="Clik-me">Click Me</p>
+      </a>
+      <div class="testimonial-content">
+        <p>"Hollywave Kids Centre now has a beautiful site that connects donors and parents seamlessly."</p>
+      </div>
+      <div class="testimonial-profile">
+        <img src="IMG/hollywave-profile.jpg" alt="Profile" />
+        <div class="profile-info">
+          <h4>Emily Smith</h4>
+          <span>Hollywave Kids Centre</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-grid">
+        <!-- Contact Info Card -->
+        <div class="contact-card">
+            <div class="icon">📧</div>
+            <h3>Email</h3>
+            <p>contact@royalweb.com</p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">📞</div>
+            <h3>Phone</h3>
+            <p>+123 456 7890</p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">📍</div>
+            <h3>Address</h3>
+            <p>123 Royal Street, Your City</p>
+        </div>
+        <!-- Google Map Card -->
+        <div class="contact-card map-card">
+            <h3>Find Us Here</h3>
+            <div class="map-placeholder">Google Map Embed</div>
+        </div>
+    </div>
+
+    <!-- Quick Message Form -->
+<div class="contact-form-card">
+    <h3>Send Us a Message</h3>
+    <p>Have questions or a project in mind? Let’s talk!</p>
+    <form class="contact-form" id="quickMessageForm">
+        <div class="form-group">
+            <label for="msgName">Your Name</label>
+            <input type="text" id="msgName" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+            <label for="msgEmail">Email</label>
+            <input type="email" id="msgEmail" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+            <label for="msgMessage">Message</label>
+            <textarea id="msgMessage" placeholder="Type your message here..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">Royal Web</div>
+        <p>&copy; 2025 Royal Web. All rights reserved.</p>
+        <div class="social">
+               <div class="socials">
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/" aria-label="Facebook">
+    <img src="IMG/facebook-brands-solid-full.svg" alt="Facebook" width="24" height="24">
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/" aria-label="Instagram">
+    <img src="IMG/instagram-brands-solid-full.svg" alt="Instagram" width="24" height="24">
+  </a>
+
+  <!-- X / Twitter -->
+  <a href="https://x.com/" aria-label="X / Twitter">
+    <img src="IMG/x-twitter-brands-solid-full.svg" alt="X / Twitter" width="24" height="24">
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/" aria-label="TikTok">
+    <img src="IMG/tiktok-brands-solid-full.svg" alt="TikTok" width="24" height="24">
+  </a>
+</div>
+              </div>
+            </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
