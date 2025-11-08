@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Web - Build Your Dream Website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/1f1f55f1e6.js" crossorigin="anonymous"></script>
 </head>
 <body>
    <header class="header">
@@ -40,7 +41,6 @@
             <a href="#booking" class="btn">Book Now</a>
         </div>
     </section>
-
     <!-- ABOUT SECTION -->
     <section class="about" id="about">
         <h2>About Royal Web</h2>
@@ -95,29 +95,34 @@
             <div class="form-group">
                 <label for="category">Business Category</label>
                 <select id="category" name="category" required>
-  <option value="">Select category</option>
-  <option value="E-commerce & Online Retail">E-commerce & Online Retail</option>
-  <option value="Technology & Software Development">Technology & Software Development</option>
-  <option value="Digital Marketing & Social Media">Digital Marketing & Social Media</option>
-  <option value="Health, Fitness & Wellness">Health, Fitness & Wellness</option>
-  <option value="Finance & Investment">Finance & Investment</option>
-  <option value="Real Estate & Property Management">Real Estate & Property Management</option>
-  <option value="Food & Beverage">Food & Beverage</option>
-  <option value="Creative & Design Services">Creative & Design Services</option>
-  <option value="Education & E-Learning">Education & E-Learning</option>
-  <option value="Sustainability & Eco-Friendly">Sustainability & Eco-Friendly</option>
-  <option value="Entertainment & Media">Entertainment & Media</option>
-</select>
-
+                  <option value="">Select category</option>
+                  <option value="E-commerce & Online Retail">E-commerce & Online Retail</option>
+                  <option value="Technology & Software Development">Technology & Software Development</option>
+                  <option value="Digital Marketing & Social Media">Digital Marketing & Social Media</option>
+                  <option value="Health, Fitness & Wellness">Health, Fitness & Wellness</option>
+                  <option value="Finance & Investment">Finance & Investment</option>
+                  <option value="Real Estate & Property Management">Real Estate & Property Management</option>
+                  <option value="Food & Beverage">Food & Beverage</option>
+                  <option value="Creative & Design Services">Creative & Design Services</option>
+                  <option value="Education & E-Learning">Education & E-Learning</option>
+                  <option value="Sustainability & Eco-Friendly">Sustainability & Eco-Friendly</option>
+                  <option value="Entertainment & Media">Entertainment & Media</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="deadline">Preferred Deadline</label>
-                <input type="date" id="deadline" name="deadline" required>
+              <label for="deadline" class="form-label">Preferred Deadline</label>
+                 <input 
+                    type="date" 
+                    id="deadline" 
+                    name="deadline" 
+                    class="form-input" 
+                    required 
+                    aria-required="true"
+                    placeholder="Select a date">
             </div>
             <button type="submit" class="btn">Request a Website</button>
         </form>
     </section>
-
    <section class="testimonials" id="testimonials">
   <h2>Our Work & Reviews</h2>
   <div class="cards">
@@ -200,11 +205,6 @@
             <h3>Address</h3>
             <p>123 Royal Street, Your City</p>
         </div>
-        <!-- Google Map Card -->
-        <div class="contact-card map-card">
-            <h3>Find Us Here</h3>
-            <div class="map-placeholder">Google Map Embed</div>
-        </div>
     </div>
 
     <!-- Quick Message Form -->
@@ -214,7 +214,7 @@
     <form action="https://formspree.io/f/xgvnbavz" method="post" class="contact-form" id="quickMessageForm">
         <div class="form-group">
             <label for="msgName">Your Name</label>
-            <input type="text" id="msgName" placeholder="John Doe" required>
+            <input type="text" id="msgName" placeholder="Feisal Ahmed Ibrahim" required>
         </div>
         <div class="form-group">
             <label for="msgEmail">Email</label>
